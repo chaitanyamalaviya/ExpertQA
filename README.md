@@ -6,11 +6,11 @@ Find the paper at [arxiv.org/abs/](arxiv.org/abs/)
 # Dataset
 
 ExpertQA contains 2177 examples, which are validated on various axes of factuality and attribution. The main data can be found at 
-* `data/r2_compiled.jsonl`
+* `data/r2_compiled_anon.jsonl`
 
 This can be loaded simply using the data loaders at `data_utils` as:
 
-```data = example_utils.read_examples("data/r2_compiled.jsonl")```
+```data = example_utils.read_examples("data/r2_compiled_anon.jsonl")```
 
 The file contains newline-separated json dictionaries with the following fields:
 * `question` - Question written by an expert.
@@ -48,8 +48,8 @@ Each Claim object contains the following fields:
 
 ## Additional Files
 
-* We also provide the list of questions (2507 in total) collected in stage 1 of our annotation. These can be found at `data/r1_data.jsonl`.
-* Answers were sampled from different systems for the purpose of annotation. Files containing all answers from a specific system can be found at `data/r1_data_answers_{MODEL_KEY}_claims.jsonl`.
+* We also provide the list of questions (2507 in total) collected in stage 1 of our annotation. These can be found at `data/r1_data_anon.jsonl`.
+* Answers were sampled from different systems for the purpose of annotation. Files containing all answers from a specific system can be found at `data/r1_data_answers_{MODEL_KEY}_claims_anon.jsonl`.
 
 ## Long-form QA
 
@@ -70,18 +70,30 @@ Found at `modeling/response_collection`. The scripts for collecting responses fr
 ## Attribution estimation
 
 Found at `modeling/auto_attribution`.
+* First, the script `convert_for_autoais.py` may be used to fetch textual evidences when URLs are returned as attributions.
+* The script `autoais.py` can then be used to generate autoAIS predictions using the TRUE model.
+* The evaluation scripts `compute_autoais_score.py` and `compute_human_correlation.py` compute averaged autoAIS scores, and correlations with reference judgements of attribution in our dataset.
+* To finetune the TRUE model on the domain split of our dataset, use the script `finetune_autoais.py`.
 
 ## Factuality estimation
 
-Found at `modeling/fact_score`.
+Found at `modeling/fact_score`. See sample usage at `get_fact_score.sh`.
+* First, we need to break down the claims in the dataset to atomic claims. This can be done with the script `break_down_to_atomic_claims.py`.
+* Next, we need to retrieve evidence for all atomic claims. This can be done using `retrieve_evidence_for_claims.py`, which retrieves the top-5 passages from the top-10 Google search results, with each atomic claim as the query.
+* Finally, we compute the scores using `factscore.py`, which prompts ChatGPT for the factuality of each atomic claim.
+* The claim-level factuality scores and the averaged F1 scores can then be computed using `compute_factuality_f1.py`.
 
 ## Long-form QA
 
-Found at `modeling/lfqa`.
+Found at `modeling/lfqa`. Example usages at `bash_scripts/run_lfqa.sh`.
+* The script `convert_for_lfqa.py` converts the split data into a format required for long-form QA training.
+* For finetuning FlanT5-XXL, use `run_gen_qa.py`.
+* For finetuning Llama-2-7B and Vicuna-7B, use `run_sft_qa.py`.
 
 # Evaluation
 
 Scripts and documentation for running evaluation are in the `eval/` directory.
+* `nlg_eval.py` computes ROUGE and QAFactEval scores. Download the QAFactEval models from `https://github.com/salesforce/QAFactEval` and place them at `qafacteval_models`.
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details
