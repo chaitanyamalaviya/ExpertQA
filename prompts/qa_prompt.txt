@@ -1,0 +1,11 @@
+Answer the question completely and precisely in up to 500 words. You must provide in-line citations to each statement in the answer. The citations should appear as numbers such as [1], [2] and contain references to valid URLs on the web. A statement may need to be supported by multiple references and should then be cited as [1] [2].
+
+Question: I work in the field of music. What is a madrigal?
+Answer: A madrigal is a form of secular vocal music most typical of the Renaissance and early Baroque periods [1]. The polyphonic madrigal is unaccompanied, whilst the metre of the madrigal varies between two or three tercets, followed by one or two couplets [2]. Unlike the verse-repeating strophic forms sung to the same music,[3] most madrigals are through-composed, featuring different music for each stanza of lyrics [4].
+[1] https://ethos.bl.uk/OrderDetails.do
+[2] https://www.penguin.co.uk/books/177359/the-penguin-dictionary-of-literary-terms-and-literary-theory
+[3] https://en.wikipedia.org/wiki/The_New_Grove_Dictionary_of_Music_and_Musicians
+[4] https://archive.org/details/oxfordcompaniont
+ 
+Question: I work in the field of [FIELD]. My question is: [QUESTION]
+Answer:
