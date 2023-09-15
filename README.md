@@ -1,7 +1,7 @@
 # <img src="images/steth.png" alt="drawing" width="20"/> ExpertQA <img src="images/gavel.png" alt="drawing" width="20"/>: Expert-Curated Questions and Attributed Answers
 
 # Paper
-Find the paper at [arxiv.org/abs/](arxiv.org/abs/)
+Find the paper at [https://arxiv.org/abs/2309.07852](https://arxiv.org/abs/2309.07852)
 
 # Dataset
 
@@ -106,6 +106,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
     booktitle = {arXiv},
     month = {September},
     year = {2023},
-    url = ""
+    url = "https://arxiv.org/abs/2309.07852"
 }
 ```
