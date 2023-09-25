@@ -23,7 +23,7 @@ The file contains newline-separated json dictionaries with the following fields:
 
 Each Answer object contains the following fields:
 * `answer_string`: The answer string.
-* `attribution`: List of evidences for the answer (not linked to specific claims).
+* `attribution`: List of evidences for the answer (not linked to specific claims). Note that these are only URLs, the evidence passages are stored in the Claim object -- see below.
 * `claims`: List of Claim objects for the answer.
 * `revised_answer_string`: Revised answer by annotator.
 * `usefulness`: Usefulness of original answer marked by annotator.
@@ -32,7 +32,7 @@ Each Answer object contains the following fields:
 
 Each Claim object contains the following fields:
 * `claim_string`: Original claim string.
-* `evidence`: List of evidences for claim (URL or URL+passage).
+* `evidence`: List of evidences for the claim (URL+passage or URL).
 * `support`: Attribution marked by annotator.
 * `reason_missing_support`: Reason for missing support specified by annotator.
 * `informativeness`: Informativeness of claim for the question, marked by annotator.
