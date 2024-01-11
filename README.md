@@ -50,6 +50,7 @@ Each Claim object contains the following fields:
 
 * We also provide the list of questions (2507 in total) collected in stage 1 of our annotation. These can be found at `data/r1_data_anon.jsonl`.
 * Answers were sampled from different systems for the purpose of annotation. Files containing all answers from a specific system can be found at `data/r1_data_answers_{MODEL_KEY}_claims_anon.jsonl`.
+* In the main dataset, evidences for each claim can be URL+passages OR only URLs, depending on which system the answer was sampled from. We provide all passage evidences in the file `data/r2_compiled_all_evidences_autoais_anon.jsonl`.
 
 ## Long-form QA
 
