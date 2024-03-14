@@ -101,12 +101,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 # Citation
 ```
-@inproceedings{malaviya23expertqa,
-    title = {ExpertQA: Expert-Curated Questions and Attributed Answers},
-    author = {Chaitanya Malaviya and Subin Lee and Sihao Chen and Elizabeth Sieber and Mark Yatskar and Dan Roth},
-    booktitle = {arXiv},
-    month = {September},
-    year = {2023},
-    url = "https://arxiv.org/abs/2309.07852"
+@inproceedings{malaviya2024expertqa,
+title={Expert{QA}: Expert-Curated Questions and Attributed Answers},
+author={Chaitanya Malaviya and Subin Lee and Sihao Chen and Elizabeth Sieber and Mark Yatskar and Dan Roth},
+booktitle={2024 Annual Conference of the North American Chapter of the Association for Computational Linguistics},
+year={2024},
+url={https://openreview.net/forum?id=hhC3nTgfOv}
 }
 ```
